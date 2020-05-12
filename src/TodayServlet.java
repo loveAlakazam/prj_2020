@@ -29,7 +29,7 @@ public class TodayServlet extends HttpServlet {
 		out.print("<head>");
 		out.print("<title>몇시에요?</title>");
 		out.print("<style>");
-		out.print("h1.time{top:50%; left:50%; position:absolute;}");
+		out.print("h1.time{top:40%; left:40%; position:absolute;}");
 		out.print("</style>");
 		out.print("</head>");
 		out.print("<body>");
