@@ -11,4 +11,4 @@
 
 # 혼자 독학하는 자바 백엔드
 
-- [부스트코스- 프로젝트1](./boostcourse/project01)
+- [부스트코스- 프로젝트1](./boostcourse/project01/readme.MD)
