@@ -1,0 +1,43 @@
+/*모든 태그의 text-align을 center로 했습니다.*/
+*{
+  text-align:center;
+}
+
+
+/* li태그 : 박스모양 디자인*/
+li.inner_li{
+  list-style-type:none;
+  font-weight:bold;
+  position: relative;
+  width:100px;
+  padding: 10px;
+  margin: 10px;
+  box-sizing:border-box;
+  background-color:#473503;
+  box-shadow: 2px 2px 5px #111;
+}
+
+
+/* section 내부 ul, li */
+ul.inner_ul{
+  position:relative;
+  overflow:auto;
+  text-align:center;
+}
+
+li.inner_li{
+  display: inline-block;
+  height:100px;
+}
+
+.inner_li > a{
+  position:relative;
+  top:40%;
+}
+
+.inner_li:hover{
+  background-color: #9c7408;
+}
+
+
+

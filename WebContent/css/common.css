@@ -1,0 +1,64 @@
+@font-face{
+    font-family: 'nanum';
+    src: url('./나눔손글씨\ 다행체.ttf')
+}
+
+body{
+    font-family:'nanum';
+    font-size:20px;
+    background-color: #f7d320;
+}
+
+/* 메뉴바 ul, li */
+ul.upper_ul{
+    overflow:auto;
+    position:relative;
+}
+
+li.upper_li{
+    float:right;
+    text-align:center;
+    position:relative;
+    list-style-type:none;
+    font-weight:bold;
+    position: relative;
+    width:100px;
+    padding: 10px;
+    margin: 10px;
+    box-sizing:border-box;
+    background-color:#473503;
+    box-shadow: 2px 2px 5px #111;
+}
+
+header{
+    background-color: #f2fcfc;
+    margin:10px;
+    padding: 10px 20px 10px 0;
+}
+  
+section{
+    padding: 20px 10px 20px 10px;
+    background-color: #f2fcfc;
+    margin:10px;
+}
+  
+footer{
+    text-align:center;
+    padding: 10px 0 10px 0;
+    background-color: #f2fcf2;
+    margin:10px;
+}
+
+  
+a{
+    text-decoration: none;
+    color:black;
+}
+
+a.menu_link{
+color:#f2fcf2;
+}
+
+.upper_li:hover{
+    background-color: #9c7408;
+}
