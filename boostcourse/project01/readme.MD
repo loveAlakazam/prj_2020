@@ -5,4 +5,4 @@
 
 - [홈페이지 만든과정 : 자세한 과정은 티스토리 블로그에 있습니다.](https://ek12mv2.tistory.com/132)
 - 실행동영상
-@[](https://play-tv.kakao.com/v/408972957)
+![](./webResult.mp4)
