@@ -1,0 +1,20 @@
+article{
+    margin:10px;
+    padding: 10px 10px 10px 50px;
+    position:relative;
+    overflow:auto;
+}
+
+img{
+    margin: 10px 0;
+    position:relative;
+    float:left;
+    width:35%;
+    height:35%;
+    border: 5px  solid #292418;
+}
+
+.photo_info{
+    float:left;
+    margin:10% 0 0 10%;
+}
