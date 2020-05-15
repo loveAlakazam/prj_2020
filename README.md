@@ -21,6 +21,6 @@
 <hr>
 
 #  KH 정보교육원(강남 1관) 프로젝트 활동
-- [mini 프로젝트]()
-- [semi 프로젝트]()
-- [final 프로젝트]()
+- [mini 프로젝트](./kh_academy/mini)
+- [semi 프로젝트](./kh_academy/semi)
+- [final 프로젝트](./kh_academy/final)
