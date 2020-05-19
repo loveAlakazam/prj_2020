@@ -1,6 +1,6 @@
 # 스파르타 코딩클럽 8기
 - [1주차-과제물: 원페이지 쇼핑몰 만들기](./sparta08/0510/hw01/readme.md)
-- [2주차-과제물: ](./sparta08/0517)
+- [2주차-과제물: JQuery & Ajax 활용하기](./sparta08/0517)
 - [3주차-과제물: ](./sparta08/0524)
 - [4주차-과제물: ](./sparta08/0531)
 - [5주차-과제물: ](./sparta08/0607)
@@ -24,4 +24,4 @@
 - [mini 프로젝트](./kh_academy/mini)
 - [semi 프로젝트](./kh_academy/semi)
 - [final 프로젝트](./kh_academy/final)
-- [과제물] (./kh_academy/homework)
+- [과제물](./kh_academy/homework)
