@@ -1,3 +1,10 @@
+"""
+selenium과 BeautifulSoup를 이용하여
+동물의 숲 동물친구 랭킹 웹페이지 크롤링
+- selenium을 이용하여, 자동으로 버튼 클릭
+- [ 이름/ 성격/ 종족/ 순위/ 이미지 출처url ] 텍스트 정보 수집
+"""
+
 from selenium import webdriver
 from bs4 import BeautifulSoup
 from selenium.common.exceptions import ElementNotInteractableException
