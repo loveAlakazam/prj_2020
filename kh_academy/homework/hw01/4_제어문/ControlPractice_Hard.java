@@ -36,9 +36,6 @@ public class ControlPractice_Hard {
 		System.out.print("비밀번호 입력(1000~9999) : ");
 		String password = sc.nextLine();
 
-		// 이건 배열과 반복문을 써야될거 같은데...
-		int useNum[] = new int[10];
-
 		String message = "성공"; // 결과 출력 메시지
 		// 입력한 비밀번호의 길이가 4인가?
 		if (password.length() == 4) {
