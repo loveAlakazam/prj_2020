@@ -16,11 +16,17 @@ public class ControlPractice_Hard {
 
 	public boolean isDuplicated(String password) {
 		// 배열과 반복문을 이용하여 중복되는 정수의 개수를 카운트
+		// boolean의 기본값은 false
 		boolean usedNum[] = new boolean[10];
 		for (int i = 0; i < password.length(); i++) {
 			char now = password.charAt(i);
-			if (usedNum[now - '0'])  // 이미 사용했다면
+			int nowNum=now-'0';
+			if (usedNum[nowNum])  // 이미 사용했다면
 				return true;
+			//아직 사용하지 않았다면
+			else{
+				usedNum[nowNum]=true;
+			}
 		}
 		return false;
 	}
