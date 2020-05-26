@@ -4,7 +4,8 @@ import logging
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
 
-MY_TOKEN="발급받은 봇 API"
+#MY_TOKEN="발급받은 봇 API"
+MY_TOKEN=''
 logging.basicConfig(format='%(asctime)s -%(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 
