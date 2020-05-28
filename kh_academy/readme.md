@@ -4,3 +4,11 @@
 - [final 프로젝트 - 최종본]()
 
 <hr>
+# 자바 기초과제
+- [1. 변수](./homework/hw01/1_변수과제/func)
+- [2. 형변환](./homework/hw01/2_형변환과제/func)
+- [3. 연산자](./homework/hw01/3_연산자/func/OperatorPractice1.java)
+- [4. 제어문](./homework/hw01/4_제어문)
+- [5. 반복문](./homework/hw01/5_반복문)
+- [6. 1차원배열](./homework/hw01/6_1차원배열/ArrayPractice.java)
+- [7. 2차원배열](./homework/hw01/7_2차원배열/DimensionPractice.java)
