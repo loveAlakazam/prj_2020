@@ -17,6 +17,10 @@
 <hr>
 
 # 나만의 텔레그램 봇 만들기
+- [01. 메시지 & gif이미지 전송](./0514/MyChatbot.py)
+- [02. 동물의 숲 홈페이지 크롤링-1](./0522/webCrawling.py)
+- [03. emoji 이미티콘 전송 & InlineKeyboard 메시지 전송기능 -1](./0529/using_model.py)
+
 
 <hr>
 
