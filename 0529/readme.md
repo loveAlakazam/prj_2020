@@ -10,4 +10,13 @@
 - 다음에 해볼 기능
   - restart() 기능 추가해야함.
   - 각 keyboard의 단추를 눌렀을 때 반응을 다르게 해야함.
-  - custon Keyboard 도 사용해보자.
+  - Custom Keyboard 도 사용해보자.
+
+- 참고한 url
+  - InlineKeyboards
+    - https://blog.psangwoo.com/coding/2018/08/20/python-telegram-bot-4.html
+    - https://github.com/python-telegram-bot/python-telegram-bot/wiki/InlineKeyboard-Example
+    - https://github.com/python-telegram-bot/python-telegram-bot/blob/master/examples/inlinekeyboard.py
+    
+- 앞으로 참고할 홈페이지
+  - https://bakyeono.net/post/2015-08-24-using-telegram-bot-api.html
