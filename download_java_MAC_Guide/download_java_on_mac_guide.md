@@ -22,7 +22,7 @@ control, command, option이 아직도 헷갈린다.
 
 <hr>
 
-1. homebrew 설치
+##1. homebrew 설치
 
 - 참고: 스파르타 2주차 강의자료
 - homebrew란?
@@ -34,10 +34,12 @@ control, command, option이 아직도 헷갈린다.
 brew install 프로그램이름
 ```
 
+<br>
+
 `프로그램이름`에 해당하는 프로그램을 자동으로 다운로드하게끔 한다.
 
 
-- (1) 터미널창에 아래 코드를 복사하여 붙여넣는다.
+###(1) 터미널창에 아래 코드를 복사하여 붙여넣는다.
 
 - 단, 해당 계정 사용자는 (관리자)의 권한을 가져야한다는 점 주의하자.
 
@@ -48,18 +50,18 @@ brew install 프로그램이름
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-- (2) 관리자 계정의 패스워드 입력
+###(2) 관리자 계정의 패스워드 입력
 
 
 <hr>
 
 
-2. JDK 설치
+##2. JDK 설치
 
 - openJDK 설치
   - 참고: https://findstar.pe.kr/2019/01/20/install-openjdk-by-homebrew/
 
-- (1) AdoptOpen JDK
+###(1) Adopt Open JDK
   - 나의 경우에는 OpenJDK8을 다운로드했다.
 
 ```bash
@@ -82,7 +84,7 @@ java -version
 
 <br>
 
-- JDK 설치(ORACLE JDK 11.0.7)
+###(2) JDK 설치(ORACLE JDK 11.0.7)
   - [ORACLE JDK 참고 페이지] (https://velog.io/@noyo0123/%EB%A7%A5%EC%97%90%EC%84%9C-%EC%9E%90%EB%B0%94-%EC%84%A4%EC%B9%98-82k3oh0d83)
 
 - 시스템 환경변수 설정하기
@@ -91,6 +93,9 @@ java -version
 
  Mac OS는 터미널을 통해서 환경변수에 넣을 수 있다.
  여기서 리눅스 용어를 사용해야한다.
+
+ <br>
+
  `vi` 는 파일 쓰기(내용 수정)을 의미한다.
 
 <br>
@@ -101,12 +106,15 @@ java -version
 
  `:wq` 는 "현재파일을 저장하고 밖으로 빠져나간다"는 의미이다.
 
+<br>
+
 - `.bash_profile`에 들어가서 내용 수정
 
 ```bash
 vi ~/.bash_profile
 ```
 
+<br>
 
 - 시스템 환경변수 편집 (bash_profile에 추가할 내용)
 
@@ -120,7 +128,7 @@ vi ~/.bash_profile
 
 <hr>
 
-3. Eclipse 설치
+##3. Eclipse 설치
 
 - 이클립스 홈페이지에 들어간다
   - More > Eclipse IDE > Download
