@@ -22,7 +22,7 @@ control, command, option이 아직도 헷갈린다.
 
 <hr>
 
-##1. homebrew 설치
+## 1. homebrew 설치
 
 - 참고: 스파르타 2주차 강의자료
 - homebrew란?
