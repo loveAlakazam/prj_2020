@@ -39,7 +39,7 @@ brew install 프로그램이름
 `프로그램이름`에 해당하는 프로그램을 자동으로 다운로드하게끔 한다.
 
 
-###(1) 터미널창에 아래 코드를 복사하여 붙여넣는다.
+### (1) 터미널창에 아래 코드를 복사하여 붙여넣는다.
 
 - 단, 해당 계정 사용자는 (관리자)의 권한을 가져야한다는 점 주의하자.
 
@@ -50,18 +50,18 @@ brew install 프로그램이름
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-###(2) 관리자 계정의 패스워드 입력
+### (2) 관리자 계정의 패스워드 입력
 
 
 <hr>
 
 
-##2. JDK 설치
+## 2. JDK 설치
 
 - openJDK 설치
   - 참고: https://findstar.pe.kr/2019/01/20/install-openjdk-by-homebrew/
 
-###(1) Adopt Open JDK
+### (1) Adopt Open JDK
   - 나의 경우에는 OpenJDK8을 다운로드했다.
 
 ```bash
@@ -84,7 +84,7 @@ java -version
 
 <br>
 
-###(2) JDK 설치(ORACLE JDK 11.0.7)
+### (2) JDK 설치(ORACLE JDK 11.0.7)
   - [ORACLE JDK 참고 페이지] (https://velog.io/@noyo0123/%EB%A7%A5%EC%97%90%EC%84%9C-%EC%9E%90%EB%B0%94-%EC%84%A4%EC%B9%98-82k3oh0d83)
 
 - 시스템 환경변수 설정하기
@@ -128,7 +128,7 @@ vi ~/.bash_profile
 
 <hr>
 
-##3. Eclipse 설치
+## 3. Eclipse 설치
 
 - 이클립스 홈페이지에 들어간다
   - More > Eclipse IDE > Download
