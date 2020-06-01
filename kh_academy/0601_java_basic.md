@@ -195,3 +195,75 @@
         ```
 
 <hr>
+
+- this
+  - 참조변수 (reference variable)
+  - 모든 인스턴스 메소드에 숨겨진 채 존재하는 레퍼런스로 할당된 객체를 가리킴
+  - this는 나(객체) 자신의 주소값을 갖고 있다.
+  - 함수 실행시 전달되는 객체의 주소를 자동으로 받는다.
+
+  - 매개변수의 이름과 필드의 이름이 동일할때 메소드 안에있는 지역변수이므로, 지역변수인 매개변수가 우선권을 갖는다.
+  - 매개변수의 값을 전달받아서 필드에 초기화 하고 싶을 때, <strong>this.필드= 매개변수</strong> 식으로 작성.
+  - this 사용 예시
+  ```java
+  public class Academy{
+     private String name;
+     public Academy(){} //기본생성자
+
+     // 매개변수가 있는 생성자
+     public Academy(String name){
+       // name= name;  
+       // 매개변수에 매개변수값을 넣는다. 따라서 필드name에 매개변수name값을 전달하지 못한다.
+
+       this.name= name; // this.name은 this가 가리키는 현재객체인 Academy를 의미하며, name 필드를 의미한다.
+     }
+  }
+  ```
+
+
+- this()
+  - 생성자, 같은 클래스의 다른 생성자를 호출할 때 사용하며 반드시 첫 줄에 선언
+  - this()가 왜 필요할까?
+    - 중복되는 생성자 코드를 줄이기 위해서 사용
+    - 예 - this() 사용하기 전
+    ```java
+    public class User{
+      private String userName;
+      private String userId;
+      private String userPwd;
+      private Date enrollDate;
+      // 기본생성자
+      public User(){}
+
+      //매개변수가 있는 생성자는
+      public User(String userName, String userId, String userPwd){
+        this.userName = userName; //코드가 중복.
+        this.userId= userId;
+        this.userPwd= userPwd;
+      }
+
+      public User(String userName){
+        this.userName=userName;// 코드중복
+      }
+    }
+    ```
+
+    - this() 사용한 후
+      - 코드 중복을 막기위해서 this()를 사용한다.
+    ```java
+    public class User{
+      // 기본생성자
+      public User(){}
+
+      // 매개변수가 있는 생성자.
+      public User(String userName, String userId, String userPwd){
+        this(userName); // 코드 중복을 막기위하여 생성자를 호출.
+        this.userId= userId;
+        this.userPwd= userPwd;
+      }
+
+      public User(String userName){
+        this.userName= userName;
+      }
+    }
+    ```
