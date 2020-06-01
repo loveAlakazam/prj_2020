@@ -99,7 +99,9 @@
       <br>
 
       - 리턴타입이 있는 메소드
+      
       <br>
+      
       ```java
       public int method(Parameters){
          int result;
@@ -111,10 +113,13 @@
       <br>
 
     - 생성자
+    
       <br>
+      
       ```java
       public ClassName(){
          ...
       }
       ```
+    
 <hr>
