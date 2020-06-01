@@ -77,49 +77,121 @@
 
 - 생성자 : 객체를 생성해주는 메소드(기능)
   - new 연산자로 인해서 객체를 생성
+
+
+  <BR>
+
+  - 생성자 종류
+    - 매개변수가 있는 생성자
+      - [접근제한자] 클래스명(매개변수){(this.)필드명=매개변수;}
+      - 사용자가 직접 만들어줘야하는 생성자이다.
+        - 기본생성자를 직접 정의하지 않는 이상은, 기본생성자를 호출하면 에러가 뜬다.
+          - 사용자가 직접 만든 생성자를 우선으로 하기 때문이다.
+
+      - 객체 생성시 (매개변수를 통해서) 필드를 초기화할 때 사용된다.
+
+    - 매개변수가 없는 생성자(기본생성자)
+      - [접근제한자] 클래스명(){}
+      - JVM이 알아서 기본생성자를 만들어준다.
+        - 생성자 정의를 안 만들었어도, JVM이 알아서 객체를 만들어준다.
+        - 그러므로 생략해도 상관없다.
+
+
   - 메모리의 heap영역에 주소값을 할당하여 생성.
     - 생성자를 통한 초기값이 가장 마지막으로 초기화된다.
     - 생성자는 전달된 초기값을 받아서 객체의 필드에 기록.
+      - 필드에 데이터를 담는다.
+      - 객체안에서 만든 필드를 초기화시킨다.
+        - 매개변수가 있는 생성자에서, 매개변수를 통해서 필드를 초기화시킨다.
+        - 기본생성자는 크게 관련하지 않는다.
+
+
+    <BR>
 
     - <strong>생성자 규칙 (중요!)</strong>
       - 생성자의 선언은 메소드 선언과 유사하나 <strong>반환값(리턴값)이 없다</strong>
       - 생성자명을 <strong>클래스명과 똑같이</strong> 해줘야한다.
 
-    - 메소드
-      - 리턴타입이 없는 메소드
+      - 기본생성자를 무조건 만들어주고 시작한다.
+        - 왜냐하면 생성자 오버로딩하게 된 경우를 고려.
 
-      <br>
+      - 오버로딩
+        - 똑같은 이름의 메소드/생성자 를 정의할 수 있다.
 
-      ```java
-      public void method(Parameters){
-         ...
-      }
-      ```
+        - <strong>같은 클래스 내에서 동일한 이름의 메소드를 여러개 작성</strong>하는 기법
+        - `매개변수의 개수`  / `매개변수 순서` 가 달라지면, 오버로딩이 가능하다.
+        - `리턴 타입` / `매개변수 이름` 이 다르다해도, 오버로딩은 불가능하다.
 
-      <br>
+        <br>
 
-      - 리턴타입이 있는 메소드
-      
-      <br>
-      
-      ```java
-      public int method(Parameters){
-         int result;
-         ...
-         return result;
-      }
-      ```
+        ```java
+        public class SampleClass{
+          // 필드(전역변수=멤버변수=멤버필드)
+          int field;
+          String field2;
+          boolean field3;
 
-      <br>
 
-    - 생성자
-    
-      <br>
-      
-      ```java
-      public ClassName(){
-         ...
-      }
-      ```
-    
+          // 생성자 오버로딩
+          //기본생성자
+          public SampleClass(){
+
+          }
+
+          // 생성자 오버로딩 - 매개변수 1개
+          public SampleClass(int num){
+            this.field=num;
+          }
+
+          // 생성자 오버로딩 - 매개변수 타입
+          public SampleClass(boolean b){
+            this.field3=b;
+          }
+
+          // 생성자 오버로딩 - 매개변수 2개
+          public SampleClass(int num, String name){
+            this.field=num;
+            this.field2=name;
+          }
+        }
+        ```
+
+    <BR>
+
+    - 메소드와 생성자 비교
+      - 메소드
+        - 리턴타입이 없는 메소드
+
+        <br>
+
+        ```java
+        public void method(Parameters){
+           ...
+        }
+        ```
+
+        <br>
+
+        - 리턴타입이 있는 메소드
+
+        <br>
+
+        ```java
+        public int method(Parameters){
+           int result;
+           ...
+           return result;
+        }
+        ```
+
+        <br>
+
+      - 생성자
+        <br>
+        ```java
+        public ClassName(){
+           ...
+        }
+        ```
+
 <hr>
