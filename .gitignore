@@ -1,3 +1,5 @@
 __pycache__
 myvenv
 *.log
+*.jar
+*.class
