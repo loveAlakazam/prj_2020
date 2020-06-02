@@ -34,10 +34,11 @@
 
 # 자바 기초과제
 
-- [1. 변수](./homework/hw01/1_변수과제/func)
-- [2. 형변환](./homework/hw01/2_형변환과제/func)
-- [3. 연산자](./homework/hw01/3_연산자/func/OperatorPractice1.java)
-- [4. 제어문](./homework/hw01/4_제어문)
-- [5. 반복문](./homework/hw01/5_반복문)
-- [6. 1차원배열](./homework/hw01/6_1차원배열/ArrayPractice.java)
-- [7. 2차원배열](./homework/hw01/7_2차원배열/DimensionPractice.java)
+- [1. 변수](./kh_academy/homework/hw01/1_변수과제/func)
+- [2. 형변환](./kh_academy/homework/hw01/2_형변환과제/func)
+- [3. 연산자](./kh_academy/homework/hw01/3_연산자/func/OperatorPractice1.java)
+- [4. 제어문](./kh_academy/homework/hw01/4_제어문)
+- [5. 반복문](./kh_academy/homework/hw01/5_반복문)
+- [6. 1차원배열](./kh_academy/homework/hw01/6_1차원배열/ArrayPractice.java)
+- [7. 2차원배열](./kh_academy/homework/hw01/7_2차원배열/DimensionPractice.java)
+- [8. 객체](./kh_academy/homework/hw01/8_객체)
