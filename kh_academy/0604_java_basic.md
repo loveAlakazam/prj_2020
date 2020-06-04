@@ -266,7 +266,8 @@ public class Academy extends Company{
     
     // 오버라이드 했음을 나타내는 표시가 없더라도 실행에 있어서는 아무런 문제가 없지만
     // @Override 를 표시하는게 좋다.
-    // 왜냐하면 부모클래스 Academy로부터 물려받은 inform메소드를 그대로 사용하지 않고, 재정의해서 사용했기 때문이다.
+    // 왜냐하면 부모클래스 Academy로부터 물려받은 inform메소드를 그대로 사용하지 않고
+    // 재정의해서 사용했기 때문이다.
     // 이는 자바개발자들끼리의 규칙이다.
     public String inform(){
       return super.inform() +" "+career+" "+subject;
