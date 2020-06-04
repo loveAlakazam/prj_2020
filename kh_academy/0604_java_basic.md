@@ -125,3 +125,20 @@ public class Academy extends Company{
   - 리턴타입이 달라도 상관없다.
   
 
+- Object 클래스
+  - 모든 클래스의 부모클래스
+  - 모든 클래스는 Object 클래스를 상속받는다.
+  - 객체의 대표값을 문자열로 나타낸다 => <strong>```객체의 대표값은 객체의 주소값```</strong>을 의미한다.
+  
+  <br>
+  
+  ```java
+  Teacher teacher =new Teacher(); // 객체 생성
+  
+  System.out.println(teacher); //주소값 (오버라이딩)
+  System.out.println(teacher.toString); //주소값
+  /*
+  toString은 Object클래스의 메소드이다.
+  주소값을 저장한 참조변수만 출력하면 주소값이 출력되는것도 오버라이딩을 했기때문이다.
+  */
+  ```
