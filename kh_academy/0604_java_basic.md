@@ -269,7 +269,9 @@ public class Academy extends Company{
     // 왜냐하면 부모클래스 Academy로부터 물려받은 inform메소드를 그대로 사용하지 않고
     // 재정의해서 사용했기 때문이다.
     // 이는 자바개발자들끼리의 규칙이다.
+    @Override
     public String inform(){
+      // 여기서 super.inform() 메소드는 부모클래스인 Academy의 inform() 메소드이다.
       return super.inform() +" "+career+" "+subject;
     }
     
