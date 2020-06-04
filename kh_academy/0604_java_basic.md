@@ -142,3 +142,143 @@ public class Academy extends Company{
   주소값을 저장한 참조변수만 출력하면 주소값이 출력되는것도 오버라이딩을 했기때문이다.
   */
   ```
+
+
+- 상속으로 인한 메소드 재정의의 예
+  - 설계관계
+    - ```Object클래스 <- Academy클래스``` : Academy클래스는 Object클래스의 자식클래스이며, 상속을 받는다.
+  
+    - ```Academy클래스 <- Teacher 클래스``` : Teacher클래스는 Academy클래스의 자식클래스이며, 상속을 받는다.
+      - Teacher클래스는 Object클래스의 멤버(필드/메소드)와 Academy클래스의 멤버를 상속받는다.
+
+      
+  - Object 클래스에서 toString() 메소드 => 주소값 출력
+    ```java
+    // java document 참고: https://docs.oracle.com/javase/8/docs/api/
+    // 즉, Object클래스에서는 현재 객체의 주소값을 문자열형태로 바꿔서 리턴한다.
+    public String toString(){
+      return getClass().getName() + '@' + Integer.toHexString(hashCode());
+    }
+    ```
+  
+  
+  - 부모클래스(Academy.java)
+  ```java
+  public class Academy{
+    //필드//
+    private String academy;
+    private String acaAddr;
+    private String name;
+    private char classroom;
+    
+    
+    //생성자//
+    public Academy(){
+      //기본생성자
+    }
+    
+    //매개변수가 있는 생성자
+    public Academy(String academy, String acaAddr, String name, char classroom){
+      this.academy=academy;
+      this.acaAddr=acaAddr;
+      this.name=name;
+      this.classroom=classroom;
+    }
+    
+    //메소드//
+    public String getAcademy(){
+      return academy;
+    }
+    
+    public void setAcademy(String academy){
+      this.academy=academy;
+    }
+    
+    public String getAcaAddr(){
+      return acaAddr;
+    }
+    
+    public void setAcaAddr(String acaAddr){
+      this.acaAddr=acaAddr;
+    }
+    
+    public String getName(){
+      return name;
+    }
+    
+    public void setName(String name){
+      this.name=name;
+    }
+    
+    public char getClassroom(){
+      return classroom;
+    }
+    
+    public void setClassroom(char classroom){
+      this.classroom=classroom;
+    }
+    
+    // inform 메소드
+    public String inform(){
+      return academy+ " " + acaAddr + classroom + " " + name;
+    }
+    
+    // toString 메소드 재정의
+    // Object 클래스의 toString() 메소드는 현재가리키는 객체의 주소값(객체를 대표하는 값)을 문자열형식으로 나타낸 것이다.
+    // 모든 클래스의 부모클래스는 Object클래스이다. -> 모든클래스들은 Object클래스에 속한 멤버를 상속받는다.
+    // 부모에서 있는그대로의 메소드를 사용하기가 불편하다면
+    // 오버라이드를 통해서 재정의를 할 수있고
+    // 재정의 이후에는 Academy 객체의 toString()메소드를 불러온다면
+    // 기존 부모클래스의 toString()메소드는 더이상 사용되지 않는다.
+    @Override
+    public String toString(){
+      return "[ "+academy+ " "+ acaAddr + classroom + " " + name+" ]";
+    }
+    
+  }
+  ```
+  
+  <br>
+  
+  - 자식클래스(Teacher.java)
+  ```java
+  public class Teacher extends Academy{
+    // Academy클래스로부터 상속받는다.
+    
+    // 필드 //
+    int career;
+    String subject;
+    
+    // 생성자 //
+    public Teacher(){
+      //기본생성자
+    }
+    
+    public Teacher(String academy, String acaAddr, String name, char classroom, String subject, int career ){
+      // 매개변수가 있는 생성자
+      // 부모객체 Academy를 먼저 생성한다. => super() : 부모객체 생성자 -> super은 부모객체의 주소값을 저장하고 있다.
+      super( academy, acaAddr, name, classroom );
+      
+      // this는 현재 객체를 나타내며, 현재 객체의 주소값을 저장하고 있는 참조변수이다.
+      this.career=career;
+      this.subject=subject;
+    }
+    
+    // 오버라이드 했음을 나타내는 표시가 없더라도 실행에 있어서는 아무런 문제가 없지만
+    // @Override 를 표시하는게 좋다.
+    // 왜냐하면 부모클래스 Academy로부터 물려받은 inform메소드를 그대로 사용하지 않고, 재정의해서 사용했기 때문이다.
+    // 이는 자바개발자들끼리의 규칙이다.
+    public String inform(){
+      return super.inform() +" "+career+" "+subject;
+    }
+    
+    @Override
+    public String toString(){
+      // 여기서 super.toString() 메소드는 부모클래스인 Academy의 toString() 메소드이다. 
+      return super.toString()+" "+career+" "+subject;
+    }
+    
+  }
+  ```
+  
+  <br>
