@@ -81,7 +81,7 @@ public class Academy extends Company{
 
 # 오버라이딩
 - 정의
-  - <string>자식클래스(하위클래스)에서 부모로부터 물려받은 메소드를 재정의 = 재작성</string>
+  - <strong> 자식클래스(하위클래스)에서 부모로부터 물려받은 메소드를 재정의 = 재작성</strong>
   - <string>부모로부터 상속받은 메소드를 재작성/ 재정의</string>하는 것
   - 부모가 제공하는 기능을 고쳐서 사용한다.
   
