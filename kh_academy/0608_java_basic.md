@@ -248,6 +248,7 @@ Object figureArray2= new Figure[5];
     - <strong>반드시 상속을 하여 객체를 생성한다.</strong>
     
   <br>
+
   - abstract 메소드가 포함된 클래스는 반드시 abstract 클래스이다.
     - <strong>abstract 메소드가 없어도, abstract 클래스로 선언이 가능하다.</strong>
     - 추상메소드가 있다 => 무조건 추상 클래스
