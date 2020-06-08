@@ -133,7 +133,37 @@ Object figureArray2= new Figure[5];
   <br>
   
   - 클래스간의 형변환은 반드시 상속관계에 있는 클래스끼리만 가능하다.
+  
+  ```java
+  // Parent.java
+  ```
 
-
+  <br>
+  
+  - 다형성은 오버로딩을 줄여줄 수 있다.
+  
+    ```JAVA
+    Car [] carArr= new Car[3];
+    
+    // 클래스 Car는 Sonata, Avante, Spark 클래스의 부모클래스이다.
+    carArr[0]= new Sonata(); 
+    carArr[1]= new Avante();
+    carArr[2]= new Spark();
+    
+    //다형성 적용
+    public void driveCar(Car car){
+    }
+    ```
+    
+    - 다형성이적용되어 있지 않다면 -> 각 자식객체별로 매개변수를 받아서 해야함. -> 오버로딩이 늘어남.
+    - 부모클래스를 매개변수로 함으로써, 여러 자식클래스로 접근할 수 있다. -> 메소드 오버로딩을 줄일 수 있다.
+    
+      ```java
+      public void driveCar(Sonata s){}
+      public void driveCar(Avante a){}
+      public void driveCar(Spark p) {}
+      ```
+      
+   
 
 
