@@ -163,7 +163,12 @@ Object figureArray2= new Figure[5];
       public void driveCar(Avante a){}
       public void driveCar(Spark p) {}
       ```
-      
-   
+
+<hr>
+
+# instanceof
+
+  - 현재 참조형 변수가 어떤 클래스형의 객체 주소를 참조하고 있는지를 확인할 때 사용하는 연산자
+  - 클래스 타입이 맞으면 true, 맞지않으면 false로 반환.
 
 
