@@ -72,7 +72,14 @@ public class Circle extends Figure{
 - 다형성을 통해서 가능하게 된다.
 - 자식객체를 부모클래스 타입으로 받을 수 있다.
 
-```
+<BR>
+
+![](./0608_poly.PNG)
+
+<BR>
+  
+  
+```java
 // 기존 객체 호출
 // 원 생성
 Circle circle =new Circle();
@@ -96,3 +103,22 @@ Figure figureArray1= new Figure[5];
 Object figureArray2= new Figure[5];
 
 ```
+
+- 업캐스팅(Up casting)
+  - 상속관계에 있는 부모, 자식 클래스 간에 부모 타입의 참조형 변수가 모든 자식 타입 객체 주소를 받을 수 있음.
+  - 자식객체의 주소를 전달받은 부모타입의 참조변수를 통해서 사용할 수 있는 후손의 정보는 <strong>원래 부모타입이었던 멤버만 참조가능</strong>
+  
+  - 부모 타입 : Car
+  - 자식 타입(객체) : Sonata 
+  
+  <br>
+  
+  ```java
+  
+  Car c= new Sonata();
+  ```
+  
+  
+
+
+
