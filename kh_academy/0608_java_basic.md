@@ -41,4 +41,58 @@
 > 상속이 기본 전제
 > 부모 타입으로부터 파생된 여러가지 타입의 자식 객체를 <strong>부모클래스 타입 하나로 다룰 수 있는 기술.</strong>
 
-> 
+<br>
+
+- 상속
+
+
+```java
+// Figure.java
+public class Figure{
+}
+```
+
+```java
+// Triangle.jav
+// 부모 클래스 : Figure
+public class Triangle extends Figure{
+}
+
+```
+
+```java
+// Circle.java
+// 부모 클래스 : Figure
+public class Circle extends Figure{
+  
+}
+```
+
+- 다형성의 기본전제는 ``상속``이다.
+- 다형성을 통해서 가능하게 된다.
+- 자식객체를 부모클래스 타입으로 받을 수 있다.
+
+```
+// 기존 객체 호출
+// 원 생성
+Circle circle =new Circle();
+
+// 삼각형 생성
+Triangle triangle = new Triangle();
+
+//다형성을 이용
+//부모클래스 타입으로 하여 자식클래스를 생성할 수 있다.
+
+Figure circle2= new Circle();
+Figure tirangle2= new Triangle();
+
+// 도형배열을 만들어서 여러 도형을 만든다.
+// 즉 각 원소의 타입을 도형(부모=상위)클래스 로하여
+// 하위클래스(자식)인 원과 삼각형을 만들 수 있다.
+Figure figureArray1= new Figure[5];
+
+
+// 모든 객체의 부모는 Object이다.
+Object figureArray2= new Figure[5];
+
+```
