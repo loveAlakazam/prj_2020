@@ -46,3 +46,4 @@
 - [10. 상속](./kh_academy/homework/hw01/10_상속)
 - [11. 다형성](./kh_academy/homework/hw01/11_다형성)
 - [12. API](./kh_academy/homework/hw01/12_API)
+- [13.예외처리](./kh_academy/homework/hw01/13_예외처리)
