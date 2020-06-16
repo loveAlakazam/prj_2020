@@ -225,3 +225,97 @@ File file =new File("파일경로");
 
 # unchecked
 - runtime exception 아래에 있지 않음.
+
+
+<hr>
+
+- 2020/06/12
+
+# 보조스트림
+
+- 스트림의 기능을 향상시키거나 새로운 기능을 추가하기 위해 사용
+
+- 기반 스트림을 먼저 생성한 후에 보조스트림을 생성
+
+- 보조스트림은 실제 데이터를 주고받는 스트림이 아니기때문에 입출력 처리가 불가
+
+- 보조스트림 종류
+  - 문자변환(InputStreamReader, OutputStreamWriter)
+  - 객체 입출력(ObjectInputStream, ObjectOutputStream)
+  - 입출력 성능(BufferedInputStream, BufferedOutputStream)
+  - 기본 데이터 타입 출력(DataInputStream, DataOutputStream)
+
+- 보조스트림 사용예
+```java
+//기반 스트림 생성
+FileInputStram fis =new FileInputStream("sample.txt");
+
+
+//보조스트림 생성- 매개변수로 기반스트림을 가리키는 참조형 변수가 있다.
+BufferedInputStream bis =new BufferedInputStream(fis);
+
+bis.read(); //보조스트림으로부터 데이터를 읽어온다.
+```
+
+<hr>
+
+# 문자변환 보조 스트림
+- 소스 스트림이 바이트 기반 스트림이지만 데이터가 문자일 경우 사용
+- Reader와 Writer문자 단위로 입출력을 하기 때문에 데이터가 문자인 경우 바이트 기반 스트림보다 편리하게 사용가능.
+
+- InputStreamReader
+  - 바이트 => InputStream => InputStreamReader => 문자
+
+- OutputStreamWriter
+  - 문자 => Writer => OutputStream => 바이트
+
+
+
+## 성능향상 보조 스트림
+- 느린 속도로 인해 입출력 성능에 영향을 미치는 입출력 소스를 이용하는 경우에 사용
+
+- 입출력 소스와 직접 작업하지 않고 ```버퍼에 데이터를 모아서 한꺼번에 작업을 하여 실행 성능 향상```
+
+- BufferedInputStream/ BufferedReader
+
+- BufferedOutputStream/ BufferedWriter
+
+
+## 기본타입 입출력 보조 스트림
+- 기본 자료형 별 데이터 읽고 쓰기가 가능하도록 기능 제공
+  - 단, 입력된 자료형의 순서와 출력될 자료형의 순서 일치
+
+- 순서
+  - 바이트 => InputStream => DataInputStream => 프로그램(데이터 기본타입) => DataOutputStream => OutputStream => 바이트
+
+
+## 객체 입출력 보조 스트림
+
+- 객체를 파일 또는 네트워크로 입출력 할 수 있는 기능 제공
+
+- 단, 객체는 문자가 아니므로 바이트 기반 스트림으로부터 ```데이터를 변경해주는 직렬화 필수```
+  - ```직렬화```: 객체를 데이터로 바꿔주는 것.
+  - 객체입출력 보조스트림은 직렬화가 무조건 필요하다.
+
+- 바이트 => InputStream => ObjectInputStream=>프로그램(객체) => ObjectOutputStream => OutputStream => 바이트
+
+
+## 직렬화 와 역직렬화
+
+- <strong>직렬화(Serialization): 객체를 데이터로 바꿔주는 것</strong>
+  - Serializable 인터페이스를 implements 하여 구현한다.
+  - 객체를 직렬화할 때 private 필드를 포함한 모든 필드를 바이트로 변환하지만
+  - transient키워드를 사용한 필드는 직렬화에 제외
+
+
+- 역직렬화(Deserialization): 데이터를 객체로 바꿔주는 것.
+  - 역직렬화할 때는 직렬화 했을 때와 같은 클래스를 사용.
+  - 단, ```클래스이름이 같더라도 클래스 내용이 변경된 경우 역직렬화 실패.```
+
+- serialVersionUID 필드
+  - 직렬화한 클래스와 같은 클래스임을 알려주는 식별자 역할
+  - 컴파일시 JVM이 자동으로 SerialVersionUID 정적 필드를 추가해 별도로 작성하지 않아도 오류는 나지 않지만
+  - 자동 생성 시 역직렬화에서 예상하지 못한 InvalidClassException을 유발할 수 있어서 명시 권장
+  ```java
+  private static final long serialVersionUID=...;
+  ```
