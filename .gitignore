@@ -3,3 +3,5 @@ myvenv
 *.log
 *.jar
 *.class
+*.DS_Store
+*.cfg
