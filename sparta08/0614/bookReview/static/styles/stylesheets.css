@@ -1,0 +1,42 @@
+* {
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+.wrap {
+    width: 500px;
+    margin: auto;
+}
+
+.img {
+    background-image: url('https://previews.123rf.com/images/maxxyustas/maxxyustas1511/maxxyustas151100002/47858355-education-concept-books-and-textbooks-on-the-bookshelf-3d.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 500px;
+    height: 300px;
+}
+
+.info {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.info p{
+    text-align:center;
+}
+
+.user-info {
+    margin: 20px 5px auto 5px;
+}
+
+h1,
+h5 {
+    display: inline;
+}
+
+.order {
+    text-align: center;
+}
+
+.orders {
+    margin-top: 100px;
+}

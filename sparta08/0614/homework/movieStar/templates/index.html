@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> My Favorite Movie Star</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/stylesheet.css') }}">
+    <script src="{{ url_for('static', filename='animation.js')}}"></script>
+</head>
+
+<body>
+    <section class="hero is-warning">
+        <div class="hero-body">
+            <div class="container make-center">
+                <h1 class="title">
+                    마이 페이보릿 무비스타😆
+                </h1>
+                <h2 class="subtitle">
+                    순위를 매겨봅시다
+                </h2>
+            </div>
+        </div>
+    </section>
+    <div class="star-list" id="star-box">
+    </div>
+</body>
+
+</html>

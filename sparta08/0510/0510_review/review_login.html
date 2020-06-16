@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(1주차) 스스로 공부하기 | 로그인페이지</title>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <style>
+        #wrap {
+            margin: 10px auto;
+            width: 90%;
+            border: 2.5px solid #000;
+            border-radius: 20px;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .mytitle {
+            position: relative;
+            color: white;
+            margin: 10px auto;
+            width: 300px;
+            height: 200px;
+            background-image: url('data:image/jpeg;base64,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');
+            background-position: center;
+            background-size: cover;
+            box-sizing: border-box;
+
+            border-radius: 10px;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .mytitle:hover{
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQSh26LakgxcyJ5lxS8ZmTA6V5Yp-_kOusicjdyV3jwhRwpdaqq&usqp=CAU');
+        }
+
+        .mytitle h1, .mytitle h5{
+            font-family: 'Black Han Sans', sans-serif;
+            position:relative;
+            padding-top: 15px;
+            color: #eae;
+        }
+
+        .mytitle > h1{
+            font-weight:lighter;
+        }
+
+
+
+        .loginPage {
+            position: relative;
+            box-sizing: border-box;
+            /* border: 5px dotted red; */
+            margin: auto 10px;
+            height: 50%;
+        }
+
+        div.input-group {
+            width: 50%;
+            margin: 10px auto;
+        }
+
+        div.input-group-text{
+            width:50px;
+            background-color: #eae;
+            font-weight: bold;
+        }
+
+        input.form-control {
+            position: relative;
+        }
+        button.btn{
+            background-color: #eae;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function hello(){
+            alert("로그인 되셨습니다!");
+        }
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="mytitle">
+            <h1>나비보벳따우</h1>
+            <h5>아이디, 비밀번호를 입력해주세요</h5>
+        </div>
+
+        <div class="loginPage">
+            <!-- 아이디 입력 영역 -->
+            <p>
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text" id="addon-wrapping">ID</div>
+                    </div>
+                    <input type="text" class="form-control" placeholder="" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+            </p>
+
+            <!-- 비밀번호 입력 영역 -->
+            <p>
+                <div class="input-group flex-nowrap">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text" id="addon-wrapping">PW</div>
+                    </div>
+                    <input type="password" class="form-control" placeholder="" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+
+            </p>
+
+            <!-- 버튼영역 -->
+            <button type="button" class="btn btn-outline-secondary" onclick="hello()">로그인</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

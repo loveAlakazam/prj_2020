@@ -1,0 +1,81 @@
+*{
+    font-family: 'Gamja Flower', cursive;
+    font-size: 20px;
+}
+
+#wrap{
+    margin: 20px auto;
+    width: 90%;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+li>h4{
+    margin-top:15px;
+}
+
+p>ul>li{
+    margin: 5px;
+}
+
+h1.productName, h1.order-h1{
+    font-weight: bold;
+}
+
+.photo, .productInfo, .orderInfo-wrap{
+    position: relative;
+    box-sizing: border-box;
+    margin: 20px auto;
+    width: 90%;
+}
+
+.productInfo, .orderInfo-wrap{
+    padding-left: 50px;
+    padding-top:10px;
+}
+
+.photo > img{
+    position:relative;
+    width:100%;
+}
+
+
+h1.productName{
+    display:inline;
+    padding-right: 20px;
+}
+
+/* 주문하기 */
+/* 수량 */
+select.custom-select{
+    position:relative;
+    width: 100%;
+    margin-right: 30px;
+    box-sizing:border-box;
+    text-align: center;
+}
+
+
+/* 주문자이름, 주소, 전화번호 */
+input.form-control{
+    position:relative;
+    width: 100%;
+    box-sizing:border-box;
+    margin-right: 30px;
+}
+
+/* 주문하기 버튼 가운데 정렬 */
+div.col-auto{
+    text-align:center;
+}
+
+div.input-group-prepend{
+    /* display:relative; */
+    text-align:center;
+}
+
+span.input-group-text{
+    width:150px;
+    margin-left:50% auto;
+    display:inline-block;
+}

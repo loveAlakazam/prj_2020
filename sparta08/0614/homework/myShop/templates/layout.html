@@ -1,0 +1,161 @@
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>나홀로 쇼핑몰</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/stylesheet.css')}}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+            
+    <script src="{{url_for('static', filename='animation.js')}}"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- 사진 영역 -->
+        <div class="photo">
+            <img src="https://admin.ildong.com/static/img/ildong/promotion/img_s01_rolling01.jpg">
+        </div>
+
+        <hr>
+
+        <!-- 상품제목 및 상품 설명 -->
+        <div class="productInfo">
+            <p>
+            <h1 class="productName">아로나민 골드</h1>
+            <span>가격: 25,000원 / 1개</span>
+            </p>
+
+
+            <p>
+            <ul>
+                <li><b> 반드시 제품 설명서 전체 내용 및 주의사항을 확인하시고 약사님과 상의후 복용바랍니다.</b></li>
+                <li>
+                    <h4>유효 성분</h4>
+                    <ul>
+                        <li>푸르설티아민 (활성비타민 B1)</li>
+                        <li>리보플라빈 부티레이트 (활성비타민 B2)</li>
+                        <li>피리독살포스페이트수화물 (활성비타민 B6)</li>
+                        <li>히드록소코발라민아세트산염 (활성비타민 B12)</li>
+                        <li>아스코르브산 (비타민 C)</li>
+                        <li>토코페롤아세테이트 2배산 (비타민 E)</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <h4>첨가제 (타르 색소)</h4>
+                    <ul>
+                        <li>적색 40호</li>
+                        <li>청색 2호</li>
+                        <li>황색 203호</li>
+                    </ul>
+
+                </li>
+
+                <li>
+                    <h4>용법/ 용량</h4>
+                    <ul>
+                        <li>성인 1회 1정</li>
+                        <li>1일 2회 복용</li>
+                    </ul>
+
+                </li>
+            </ul>
+            </p>
+
+        </div>
+
+        <hr>
+
+        <!-- 주문하기 영역 -->
+        <div class="orderInfo-wrap">
+            <h1 class="order-h1">주문하기</h1>
+
+            <!-- 달러 원/환율 영역 -->
+            <div id="dollar_won_wrap">달러/원 환율: <span id="dollar_won"></span></div>
+            <!-- 주문자 정보 입력란 -->
+            <div class="orderInfo-sub">
+                <form>
+                    <!-- 1. 주문자 이름 -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">주문자 이름</span>
+                        </div>
+                        <input type="text" class="form-control order-name" id="order-name"
+                            aria-describedby="basic-addon3">
+                    </div>
+
+                    <!-- 구매 수량 -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">수량</span>
+                        </div>
+
+                        <!-- 선택란으로 변경 -->
+                        <select class="custom-select" id="order-cnt">
+                            <option selected>-- 수량을 선택해주세요 --</option>
+                            <option value="1">1개</option>
+                            <option value="2">2개</option>
+                            <option value="3">3개</option>
+                        </select>
+                    </div>
+
+
+                    <!-- 주소 -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">주소</span>
+                        </div>
+                        <input type="text" class="form-control" id="order-address" aria-describedby="basic-addon3">
+                    </div>
+
+
+                    <!-- 전화번호 -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">전화번호</span>
+                        </div>
+                        <input type="text" class="form-control order-tel" id="order-tel"
+                            aria-describedby="basic-addon3">
+                    </div>
+
+                    <!-- 주문하기 버튼 -->
+                    <div class="col-auto my-1">
+                        <!-- 주문하기 버튼을 누르면 clickOrder() 함수 실행 -->
+                        <button class="btn btn-primary" onclick="clickOrder();">주문하기</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="orders">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">이름</th>
+                    <th scope="col">수량</th>
+                    <th scope="col">주소</th>
+                    <th scope="col">전화번호</th>
+                    <th scope="col">가격</th>
+                </tr>
+            </thead>
+
+            <tbody id="list-box">
+            </tbody>
+
+        </table>
+    </div>
+</body>
+
+</html>

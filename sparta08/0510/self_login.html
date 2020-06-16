@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인을 해보자.</title>
+
+    <style>
+        /* 
+            css 적용 우선순위: 태그이름 < 클래스(class) < 아이디(id)
+            타깃과 가장 가까울 수록 css적용 우선순위가 높다.
+        */
+
+        /* 이 안에는 css코드를 적는다. */
+        /* 태그명을 바로 가리킬 때 */
+
+        /* 페이지 전체 적용 */
+        * {
+            margin: 0;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        /* 특정태그에만 적용 */
+        p {
+            background: yellowgreen;
+            color: darkgreen;
+        }
+
+        /* p안에 있는 input(특정 input-태그) 에 적용 */
+        p > input{
+            color:red;
+        }
+
+        /* p안에 클래스가 .class인 태그에만 적용 */
+        p > .class{
+            color:black;
+        }
+
+        /* id를 가리킬 때 => # */
+        /* #id {
+            color: #fdfa;
+        }
+
+        /* class를 만들어 가리킬 때=> . */
+        /* .class {
+            color: yellow;
+        } */ */
+
+        button {
+            color: blue;
+        }
+
+        #title {
+            color: cornflowerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">로그인 페이지</h1>
+    <div>
+        <!-- 고유한 것을 바꿔야한다: id -->
+        <p id="id"> ID: <input type="text"></p>
+
+        <!-- 특정다수를 바꿔야한다 : class -->
+        <p class="class"> PW: <input type="text"></p>
+        <p class="class"> PW: <input type="text"></p>
+        <p class="class"> PW: <input type="text"></p>
+        <p class="class"> PW: <input type="text"></p>
+        <p class="class"> PW: <input type="text"></p>
+        <p class="class"> PW: <input type="text"></p>
+        <p class="class"> PW: <input type="text"></p>
+        <p class="class"> PW: <input type="text"></p>
+
+        <button>로그인 하기</button>
+    </div>
+</body>
+
+</html>

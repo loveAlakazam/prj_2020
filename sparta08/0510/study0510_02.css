@@ -1,0 +1,47 @@
+* {
+    font-size: 30px;
+    font-weight: lighter;
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+.mytitle {
+    color: white;
+    width: 300px;
+    height: 200px;
+    background-image: url('https://www.ancient-origins.net/sites/default/files/field/image/Agesilaus-II-cover.jpg');
+    background-position: center;
+    background-size: cover;
+
+    border-radius: 10px;
+    text-align: center;
+    /* margin: border밖 -바깥쪽 여백 */
+    /* padding: border 안 - 안쪽여백 */
+    padding-top: 40px;
+    
+    padding-left: 40px;
+    margin-left:40px; 
+
+    /* 스크린 크기에 따라서 랜더링을 다르게함. */
+    @media min-width(780px) {}
+}
+
+.wrap {
+
+    /*
+    margin: 10px auto; 
+    위아래 10px 좌우를 auto로 한다. 
+    width: 300px
+    
+    magin: auto(위아래자동) 10px;
+    hegith: 300px;
+    */
+    margin: 10px auto;
+    width: 350px;
+    text-align: center;
+}
+
+/* 모바일에 이대로 보여주면 깨진다. 
+    모바일에도 정상적으로 랜더링시키려면
+    @media를 넣는다.
+*/

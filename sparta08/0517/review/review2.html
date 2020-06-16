@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스파르타 코딩클럽 | 자바스크립트 복습</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        let i = 0; //전역변수
+        function handleClick(){
+            if (i%2==0){
+                alert("짝짝짝");
+            }else{
+                alert("홀홀홀");
+            }
+            console.log(i++);
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="handleClick();">이 버튼을 클릭하세여</button>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+/* tester */
+#bodyContainer{
+    background-color:#aaa;
+}
+
+#main_container, #buy_container, #cook_container{
+    background-color:#fc2;
+    margin: 10% auto;
+    width: 90%;
+}
+
+#main_select_container{
+    background-color:#2c2;
+}

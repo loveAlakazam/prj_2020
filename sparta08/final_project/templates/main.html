@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>메인 페이지</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="./stylesheet.css">
+    <script></script>
+</head>
+
+<body>
+    <div id="bodyContainer">
+        <!-- 메인 컨테이너 시작 -->
+        <div id="main_container" class="jumbotron">
+            <h1 class="display-4">오늘 서울에서 뭐먹을까?</h1>
+
+            <div class="weather-info-box">
+                <section>
+                    <h3 class="lead">오늘 서울 날씨</h3>
+                    <h4 class="lead" id="place">성동구</h4> <!-- 지역 정보 -->
+                    <h4 class="lead" id="weather-num">30도</h4> <!-- 현재 온도-->
+                    <h4 class="lead" id="weather-condition">맑음</h4> <!-- 현재 날씨 상태-->
+                </section>
+            </div>
+
+
+            <hr class="my-4">
+            <p>오늘은 식사는 사먹을까? 요리를 할까?</p>
+            <div class="select-do-box">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                            aria-controls="home" aria-selected="true">오늘은 사먹을래!</a>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                            aria-controls="profile" aria-selected="false">오늘은 요리할래!</a>
+                    </li>
+
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                            aria-controls="contact" aria-selected="false">오늘은 그냥 요리 유튜브 볼래!</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <!-- 오늘은 사먹을래! 버튼을 클릭 -->
+                        <h3>오늘은 어떤걸 사먹을까?</h3>
+                        <p>오늘은 어떤걸 사먹을까요??</p>
+                        <p>괜찮은 맛집이 있을까요오?</p>
+                    </div>
+
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <!-- 오늘은 요리할래! 버튼을 클릭-->
+                        <h3>오늘은 어떤 요리를 할까?</h3>
+                        <p>오늘은 어떤 요리를 할까요오오오?</p>
+                    </div>
+
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <!-- 오늘은 그냥 요리 유튜브 볼래! 버튼을 클릭  -->
+                        <h3>오늘은 어떤 유튜브 영상을 볼까?</h3>
+                        <p>오늘은 어떤 유튜브영상을 볼까요오?</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- 메인 컨테이너 끝 -->
+
+
+        <!-- buy_container 시작 -->
+        <!-- 구매하기 버튼을 누르면 buy_container가 열려진다. -->
+        <div id="buy_container" class="jumbotron">
+            <h1 class="display-4">서울에서 뭐사먹을까?</h1>
+
+            <!-- 검색하기 -->
+            <div class="buy_search_box">
+                <div class="select-menu">
+                    <select name="" id="buy-menu">
+                        <option value="전체">전체</option>
+                        <option value="고기">고기</option>
+                        <option value="한식">한식</option>
+                        <option value="중식">중식</option>
+                        <option value="일식">일식</option>
+                        <option value="양식">양식</option>
+                        <option value="술안주">술안주</option>
+                        <option value="디저트">디저트</option>
+                        <option value="면요리">면요리</option>
+                        <option value="편의점">편의점</option>
+                    </select>
+                </div>
+                <a class="btn btn-primary btn-lg" href="#" role="button">검색하기</a>
+            </div>
+        </div>
+        <!-- buy_container 끝 -->
+
+
+        <!-- cook_container 시작 -->
+        <div id="cook_container" class="jumbotron">
+            <!-- 요리할래! 버튼을 클릭한 경우 열기 -->
+            <h1 class="display-4">오늘은 어떤 요리를 할까?</h1>
+
+
+        </div>
+        <!-- cook_container 끝 -->
+
+
+        <div id="search_result_container">
+            <!-- 검색결과 창 -->
+            <h1 class="display-4">이건 어때?</h1>
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>

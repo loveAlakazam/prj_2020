@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- css -->
+    <link rel="stylesheet" href="./study_bstrap01.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300&display=swap" rel="stylesheet">
+
+    <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- slim version :  ajax를 사용할 수 없음. 가벼운 버젼. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+
+    <!-- 포스팅박스 열기 버튼에 funtion 달기-->
+    <script>
+        function openClose() {
+            // alert('연결성공!');
+            let postBox = $("#post-box");
+            let btnPostingBox = $('#btn-posting-box');
+
+            //포스팅박스가 보이는 상태
+            if (postBox.css('display') == 'block') {
+                postBox.hide(); //포스팅 박스가 안보임
+                btnPostingBox.text('포스팅박스 열기');
+            }
+            //포스팅박스가 안보이는 상태(none)
+            else {
+                postBox.show();//포스트박스가 보임.
+                btnPostingBox.text('포스팅박스 닫기');
+            }
+        }
+        //화면 로딩 준비가 잘 됏다면, -> 이 코드를 실행하라.
+        $(document).ready(function () {
+            listing();
+        });
+
+        function listing() {
+            //ajax추가하기
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/post", //서버에 저장된 조회할 url
+                data: {},
+                //요청 성공 -> 응답이 왔을때 (통신이 잘되는지 테스트)
+                success: function (response) {
+                    let articles = response['articles'];
+                    // console.log(articles);
+                    for (let i = 0; i < articles.length; i++) {
+                        let current = articles[i];
+                        console.log(current);
+
+                        make_card(current['comment'], current['desc'], current['image'], current['title'], current['url']);
+                    }
+                }
+            })
+        }
+
+
+        function make_card(comment, desc, image, title, url) {
+            let temp_html = `<div class="card">
+                                <img class="card-img-top" src="${image}" alt="Card image cap">
+                                <div class="card-body">
+                                <a href="${url}" target="_blank" class="card-title">${title}</a>
+                                <p class="card-text">${desc}</p>
+                                <p class="card-text comment">${comment}</p>
+                                </div>
+                            </div>`;
+            $('#cards-box').append(temp_html);
+        }
+    </script>
+</head>
+
+
+<body>
+    <div id="wrap">
+        <!-- 헤더 -->
+        <div class="jumbotron">
+            <h1 class="display-3">나홀로 링크 메모장!</h1>
+            <p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다</p>
+            <hr class="my-4">
+            <p class="lead">
+                <a id="btn-posting-box" class="btn btn-secondary btn-lg" href="#" role="button"
+                    onclick="openClose();">포스팅박스 열기</a>
+                <!-- 포스팅 박스 열기 -> 클릭하면 -> openClose()함수 호출 -->
+            </p>
+        </div>
+
+        <!-- 포스팅 박스 -->
+        <!-- 초기 display상태는 none -->
+        <div id="post-box" class="posting-box">
+
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">아티클 URL</label>
+                    <input id="post-url" type="text" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">간단 코멘트</label>
+                    <textarea id="post-comment" type="text" class="form-control" id="exampleInputPassword1"
+                        placeholder=""></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">기사 저장</button>
+            </form>
+
+            <!-- <div class="article-box">
+                <p> 아티클 URL</p>
+                <input type="text"> 
+            </div>
+
+            <div class="comment-box">
+                <p> 간단 코멘트 </p>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <a class="btn btn-primary btn-lg" href="#" role="button">링크 저장</a>
+            </div> -->
+        </div>
+        <!-- 포스팅박스 끝 -->
+
+        <!-- 게시글 -->
+        <div id="cards-box" class="card-columns">
+
+            <!-- <div class="card">
+                <img src="https://i.ytimg.com/vi/cpNth_tjeLo/maxresdefault.jpg" class="card-img-top" alt="개가수">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="https://www.youtube.com/watch?v=cpNth_tjeLo">나비보벳따우</a></h5>
+                    <p class="card-text">모여봐요 동물의 숲! 개가수! K.K의 명곡 나비보벳따우!</p>
+                    <p class="comment">K.K 하우스 너무 중독성있음</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://www.ancient-origins.net/sites/default/files/field/image/Agesilaus-II-cover.jpg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="https://www.notion.so/8-e449fceeb4c8474495efa2c09d3da68c">스파르타
+                            코딩클럽</a></h5>
+                    <p class="card-text">스파르타다.. 과연 스파르타 코딩클럽에서 코딩세포를 되찾을 수 있을까? 두근두근
+                        개발자님이 너무 열정적으로 가르치신다! 나도 열심히 따라해야지!
+                    </p>
+                    <p class="comment">여기에 코멘트가 들어갑니다.</p>
+                </div>
+            </div>
+
+
+
+            <div class="card">
+                <img src="https://mblogthumb-phinf.pstatic.net/MjAxNzAyMDhfMTIg/MDAxNDg2NTE1MDM4NDM4.N9nFKbgdIrtToiiWhhzmaGHuxdZFNHnuoj7-7Cd-Ldkg.qOmMQVKYbJ25a1nBTTLIRABXAemSwbtydv92J6cxfC0g.JPEG.flysky2013/%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg?type=w800"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="https://www.naver.com">네이버</a></h5>
+                    <p class="card-text">네이버 홈페이지로 이동합니다.</p>
+                    <p class="comment">한국 검색포털 1위 네이버</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile30.uf.tistory.com%2Fimage%2F2519033F58745FED204806"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="https://google.com">구글</a></h5>
+                    <p class="card-text">구글신님 감사합니다. 역시 검색은 구글이지!</p>
+                    <p class="comment">여기에 코멘트가 들어갑니다.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/cpNth_tjeLo/maxresdefault.jpg" class="card-img-top" alt="개가수">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="https://www.youtube.com/watch?v=cpNth_tjeLo">나비보벳따우</a></h5>
+                    <p class="card-text">모여봐요 동물의 숲! 개가수! K.K의 명곡 나비보벳따우!</p>
+                    <p class="comment">K.K 하우스 너무 중독성있음</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="https://www.ancient-origins.net/sites/default/files/field/image/Agesilaus-II-cover.jpg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="https://www.notion.so/8-e449fceeb4c8474495efa2c09d3da68c">스파르타
+                            코딩클럽</a></h5>
+                    <p class="card-text">스파르타다.. 과연 스파르타 코딩클럽에서 코딩세포를 되찾을 수 있을까? 두근두근
+                        개발자님이 너무 열정적으로 가르치신다! 나도 열심히 따라해야지!
+                    </p>
+                    <p class="comment">여기에 코멘트가 들어갑니다.</p>
+                </div>
+            </div>
+
+
+
+            <div class="card">
+                <img src="https://mblogthumb-phinf.pstatic.net/MjAxNzAyMDhfMTIg/MDAxNDg2NTE1MDM4NDM4.N9nFKbgdIrtToiiWhhzmaGHuxdZFNHnuoj7-7Cd-Ldkg.qOmMQVKYbJ25a1nBTTLIRABXAemSwbtydv92J6cxfC0g.JPEG.flysky2013/%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg?type=w800"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="https://www.naver.com">네이버</a></h5>
+                    <p class="card-text">네이버 홈페이지로 이동합니다.</p>
+                    <p class="comment">한국 검색포털 1위 네이버</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile30.uf.tistory.com%2Fimage%2F2519033F58745FED204806"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="https://google.com">구글</a></h5>
+                    <p class="card-text">구글신님 감사합니다. 역시 검색은 구글이지!</p>
+                    <p class="comment">여기에 코멘트가 들어갑니다.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile30.uf.tistory.com%2Fimage%2F2519033F58745FED204806"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="https://google.com">구글</a></h5>
+                    <p class="card-text">구글신님 감사합니다. 역시 검색은 구글이지!</p>
+                    <p class="comment">여기에 코멘트가 들어갑니다.</p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+</body>
+
+</html>

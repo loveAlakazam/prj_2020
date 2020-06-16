@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "shop/bin/python",
+    "git.ignoreLimitWarning": true
+}

@@ -1,0 +1,53 @@
+*{
+    font-family: 'Gaegu', cursive;
+}
+
+#wrap {
+
+    /*
+    margin: 10px auto; 
+    위아래 10px 좌우를 auto로 한다. 
+    width: 300px
+    
+    magin: auto(위아래자동) 10px;
+    hegith: 300px;
+    */
+    margin: 10px auto;
+    width: 90%;
+}
+
+.card-title{
+    font-size:25px;
+    font-weight:bold;
+    text-align:center;
+}
+
+.card-text{
+    font-size:20px;
+}
+
+.comment{
+    color: #478bb5;
+    font-weight:bold;
+}
+
+div.posting-box{ 
+    box-sizing: border-box;
+    font-size: 25px; 
+    width: 70%;
+    border: 5px solid #111;
+    border-radius: 10px;
+
+    position:relative;
+    margin: 10px auto;
+    padding: 50px;
+}
+
+.posting-box button{
+    font-size: 25px;
+}
+
+#post-box{
+    display:none;
+}
+
