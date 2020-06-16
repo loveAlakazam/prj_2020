@@ -770,6 +770,9 @@ public class SnackCompare implements Comparator<String>{
 
 
 - Properties Exercise 1
+
+<br>
+
 ```java
 //MapController.java
 package com.kh.example.map.controller;
@@ -892,4 +895,30 @@ public class MapController {
 	}
 }
 
+```
+
+<br>
+
+```java
+package com.kh.example.map.run;
+
+import com.kh.example.map.controller.MapController;
+
+public class Run {
+	// must insert main method!
+	// Syntax error on token "doMap", Identifier expected after this token
+	public static void main(String[] args) {
+		MapController m = new MapController();
+//		m.doMap();
+//		m.doProperties();
+
+		//파일저장.(파일쓰기)
+//		m.fileSave("test.properties");
+//		m.fileSave("test.xml");
+
+		//파일읽기
+//		m.fileOpen("test.xml");
+		m.fileOpen("test.properties");
+	}
+}
 ```
