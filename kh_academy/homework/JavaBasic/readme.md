@@ -1,0 +1,17 @@
+# 자바과제
+
+- [1. 변수](./kh_academy/homework/JavaBasic/1_변수과제)
+- [2. 형변환](./kh_academy/homework/JavaBasic/2_형변환과제)
+- [3. 연산자](./kh_academy/homework/JavaBasic/3_연산자)
+- [4. 제어문](./kh_academy/homework/JavaBasic/4_제어문)
+- [5. 반복문](./kh_academy/homework/JavaBasic/5_반복문)
+- [6. 1차원배열](./kh_academy/homework/JavaBasic/6_1차원배열)
+- [7. 2차원배열](./kh_academy/homework/JavaBasic/7_2차원배열)
+- [8. 객체](./kh_academy/homework/JavaBasic/8_객체)
+- [9. 객체배열](./kh_academy/homework/JavaBasic/9_객체배열)
+- [10. 상속](./kh_academy/homework/JavaBasic/10_상속)
+- [11. 다형성](./kh_academy/homework/JavaBasic/11_다형성)
+- [12. API](./kh_academy/homework/JavaBasic/12_API)
+- [13.예외처리](./kh_academy/homework/JavaBasic/13_예외처리)
+- [14.IO](./kh_academy/homework/JavaBasic/14_IO)
+- [15.Collection](./kh_academy/homework/JavaBasic/15_Collection)
